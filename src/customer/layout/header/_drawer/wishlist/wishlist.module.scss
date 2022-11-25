@@ -1,0 +1,35 @@
+.cart_drawer {
+    .item {
+        margin-top: 20px;
+
+        .image {
+            width: 100%;
+        }
+
+        .middle {
+            font-family: 'Jost', sans-serif;
+            padding-top: 8px;
+            padding-left: 8px;
+            width: 100%;
+
+            .name {
+                font-size: 16px;
+                font-weight: 300 !important;
+                color: #252525;
+                margin-bottom: 2px;
+                word-break: normal;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                white-space: nowrap;
+                max-width: 280px;
+            }
+
+            .price {
+                font-weight: 300;
+                padding-bottom: 6px;
+            }
+        }
+    }
+}

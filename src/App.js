@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Header from './customer/layout/header/header';
 import 'antd/dist/reset.css';
 import Home from './customer/page/home/home';

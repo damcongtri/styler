@@ -5,17 +5,26 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Btn_x from "../../../component/btn/btn_x";
 import style from "./header.module.scss";
-import NavDrawer from "./nav_drawer/drawer";
+import CartDrawer from "./_drawer/cart/cart";
+
 
 
 function Header() {
-    const [open, setOpen] = useState(false);
-    const showDrawer = () => {
-        setOpen(true);
+    const [openNav, setOpenNav] = useState(false);
+    const [openCart, setOpenCart] = useState(false);
+    const showDrawerNav = () => {
+        setOpenNav(true);
     };
 
-    const onClose = () => {
-        setOpen(false);
+    const onCloseNav = () => {
+        setOpenNav(false);
+    };
+    const showDrawerCart = () => {
+        setOpenCart(true);
+    };
+
+    const onCloseCart = () => {
+        setOpenCart(false);
     };
     return (
         <>
@@ -23,7 +32,7 @@ function Header() {
                 <div className={clsx("container-xxl", style.container_styler)}>
                     <Row justify="space-between" align='middle'>
                         <Row align={"middle"}>
-                            <MenuUnfoldOutlined onClick={showDrawer} style={{ fontSize: "22px", cursor: "pointer" }} />
+                            <MenuUnfoldOutlined onClick={showDrawerNav} style={{ fontSize: "22px", cursor: "pointer" }} />
                             <Link to={"/"} className={clsx(style.logo)}>
                                 styler
                             </Link>
@@ -154,7 +163,7 @@ function Header() {
                             <Space>
                                 <div className={clsx(style.header_icon)}><SearchOutlined /></div>
                                 <Badge style={{ backgroundColor: '#daa174' }} count="2">
-                                    <div className={clsx(style.header_icon)}><ShoppingCartOutlined /></div>
+                                    <div onClick={showDrawerCart} className={clsx(style.header_icon)}><ShoppingCartOutlined /></div>
                                 </Badge>
                                 <Badge style={{ backgroundColor: '#daa174' }} count="0">
                                     <div className={clsx(style.header_icon)}><HeartOutlined /></div>
@@ -177,28 +186,97 @@ function Header() {
                 // title="Drawer with extra actions"
                 placement={"left"}
                 width={530}
-                onClose={onClose}
+                onClose={onCloseNav}
                 closable={false}
-                open={open}
+                open={openNav}
                 bodyStyle={{ padding: '0' }}
                 maskStyle={{ backgroundColor: "#d5d5d573" }}
             // extra={
             //     <Space>
-            //         <Button onClick={onClose}>Cancel</Button>
-            //         <Button type="primary" onClick={onClose}>
+            //         <Button onClick={onCloseNav}>Cancel</Button>
+            //         <Button type="primary" onClick={onCloseNav}>
             //             OK
             //         </Button>
             //     </Space>
             // }
             >
-                <div className={style.btn_x}>
-                    <p onClick={onClose} >
-                        <Btn_x></Btn_x>
-                    </p>
+
+                <Row className={clsx(style.nav)}>
+                    <Col flex="80px" className={clsx(style.left_nav, "col-xs-12")} >
+                        <div className={style.btn_x}>
+                            <p onClick={onCloseNav} >
+                                <Btn_x></Btn_x>
+                            </p>
+                        </div>
+                        <div className={clsx(style.icon_group)}>
+                            <div className={clsx(style.nav_icon)}>
+                                <Badge style={{ backgroundColor: '#daa174' }} count="0">
+                                    <div className={clsx(style.item_icon)}><SearchOutlined /></div>
+                                </Badge>
+                            </div>
+                            <div className={clsx(style.nav_icon)}>
+                                <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="2">
+                                    <div className={clsx(style.item_icon)}><ShoppingCartOutlined /></div>
+                                </Badge>
+                            </div>
+                            <div className={clsx(style.nav_icon)}>
+                                <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
+                                    <div className={clsx(style.item_icon)}><HeartOutlined /></div>
+                                </Badge>
+                            </div>
+                            <div className={clsx(style.nav_icon)}>
+                                <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
+                                    <div className={clsx(style.item_icon)}><SyncOutlined /></div>
+                                </Badge>
+                            </div>
+                            <div className={clsx(style.nav_icon)}>
+                                <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
+                                    <div className={clsx(style.item_icon)}><UserOutlined /></div>
+                                </Badge>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col flex="auto">
+                    </Col>
+                </Row>
+
+            </Drawer>
+            <Drawer
+
+                placement={"right"}
+                width={window.innerWidth > 460 ? 460 : '100%'}
+                closable={false}
+                onClose={onCloseCart}
+                open={openCart}
+                maskStyle={{ backgroundColor: "#d5d5d573" }}
+            >
+                <div className={clsx(style.drawer_right)}>
+                    <div className={clsx(style.drawer_rt)}>
+
+                        <div className={style.btn_x}>
+                            <p onClick={onCloseCart} >
+                                <Btn_x></Btn_x>
+                            </p>
+                        </div>
+                        <div className={clsx(style.icon_drawer_group)}>
+                            <Badge offset={[-12, 4]} style={{ backgroundColor: '#daa174' }} count="2">
+                                <div onClick={showDrawerCart} className={clsx(style.icon_drawer)}><ShoppingCartOutlined /></div>
+                            </Badge>
+                            <Badge offset={[-12, 4]} style={{ backgroundColor: '#daa174' }} count="0">
+                                <div className={clsx(style.icon_drawer)}><HeartOutlined /></div>
+                            </Badge>
+                            <Badge offset={[-12, 4]} style={{ backgroundColor: '#daa174' }} count="0">
+                                <div className={clsx(style.icon_drawer)}><SyncOutlined /></div>
+                            </Badge>
+
+                        </div>
+
+                    </div>
+                    <CartDrawer />
                 </div>
 
-                <NavDrawer></NavDrawer>
             </Drawer>
+
         </>
     );
 }

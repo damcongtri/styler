@@ -1,3 +1,37 @@
+// Khai báo kích thước tương ứng với màn hình thiết bị $XS: 480px;
+$SM: 768px;
+$MD: 1024px;
+$XL: 1170px;
+
+// media queries
+
+@mixin Responsive($canvas) {
+    @if $canvas ==XS {
+        @media only screen and (min-width: $XS) {
+            @content;
+        }
+    }
+
+    @else if $canvas ==SM {
+        @media only screen and (min-width: $SM) {
+            @content;
+        }
+    }
+
+    @else if $canvas ==MD {
+        @media only screen and (min-width: $MD) {
+            @content;
+        }
+    }
+
+    @else if $canvas ==XL {
+        @media only screen and (min-width: $XL) {
+            @content;
+        }
+    }
+}
+
+
 .header {
     height: 80px;
     vertical-align: middle;
@@ -182,24 +216,103 @@
 
 }
 
-.btn_x {
-    width: 80px;
-    height: 80px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.left_nav {
     background-color: #f5f4ee;
+    height: 100%;
 
-    p {
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
+    .btn_x {
+        width: 80px;
+        // height: 80px;
+        padding: 12px 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #fff;
-        border-radius: 50%;
-        margin: 0;
+        // background-color: #f5f4ee;
+
+        p {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 0;
+        }
+    }
+
+    .icon_group {
+        text-align: center;
+
+        .nav_icon {
+            width: 100%;
+            display: block;
+            padding-bottom: 20px;
+
+            .item_icon {
+                font-size: 22px;
+                cursor: pointer;
+                background-color: #fff;
+                border-radius: 50%;
+
+                span {
+                    padding: 10px;
+
+                }
+            }
+
+
+        }
+    }
+
+}
+
+.nav {
+    height: 100%;
+}
+
+.drawer_right {
+    .drawer_rt {
+        display: flex;
+        justify-content: space-between;
+
+        .btn_x {
+            width: 80px;
+            // height: 80px;
+            // padding: 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            // background-color: #f5f4ee;
+
+            p {
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #f8f9fa;
+                border-radius: 50%;
+                margin: 0;
+            }
+        }
+
+        .icon_drawer_group {
+            display: flex;
+            justify-content: end;
+
+            .icon_drawer {
+                font-size: 22px;
+                padding: 5px;
+                margin-right: 12px;
+                cursor: pointer;
+
+                span {
+                    vertical-align: middle;
+                }
+            }
+        }
     }
 }

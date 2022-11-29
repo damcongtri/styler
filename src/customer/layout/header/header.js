@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Btn_x from "../../../component/btn/btn_x";
 import style from "./header.module.scss";
 import CartDrawer from "./_drawer/cart/cart";
+import Compare_drawer from "./_drawer/compare/compare";
+import Wishlish_drawer from "./_drawer/wishlist/wishlist";
 
 
 
@@ -19,13 +21,17 @@ function Header() {
     const onCloseNav = () => {
         setOpenNav(false);
     };
-    const showDrawerCart = () => {
+    const showDrawerCart = (tab) => {
+        setTab_right(tab)
         setOpenCart(true);
     };
 
     const onCloseCart = () => {
         setOpenCart(false);
     };
+    const [tab_right, setTab_right] = useState(false)
+    const [tab_left, setTab_left] = useState(false)
+    console.log(tab_left);
     return (
         <>
             <div className={clsx(style.header)}>
@@ -38,7 +44,7 @@ function Header() {
                             </Link>
                         </Row >
 
-                        <div className={clsx(style.menu, 'd-flex')}>
+                        <Row className={clsx(style.menu, 'd-xl-flex', 'd-none')}>
                             <div className={clsx(style.item)}>
                                 <Link to="/shop">Shop</Link>
                             </div>
@@ -158,20 +164,20 @@ function Header() {
 
                             <div className={clsx(style.item)}>About Us</div>
                             <div className={clsx(style.item)}>Contact</div>
-                        </div>
+                        </Row>
                         <div className={clsx(style.header_right)}>
                             <Space>
-                                <div className={clsx(style.header_icon)}><SearchOutlined /></div>
+                                <div className={clsx(style.header_icon, 'd-sm-flex', 'd-none')}><SearchOutlined /></div>
                                 <Badge style={{ backgroundColor: '#daa174' }} count="2">
-                                    <div onClick={showDrawerCart} className={clsx(style.header_icon)}><ShoppingCartOutlined /></div>
+                                    <div onClick={() => showDrawerCart('cart')} className={clsx(style.header_icon)}><ShoppingCartOutlined /></div>
                                 </Badge>
                                 <Badge style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div className={clsx(style.header_icon)}><HeartOutlined /></div>
+                                    <div onClick={() => showDrawerCart('wish')} className={clsx(style.header_icon)}><HeartOutlined /></div>
                                 </Badge>
                                 <Badge style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div className={clsx(style.header_icon)}><SyncOutlined /></div>
+                                    <div onClick={() => showDrawerCart('compare')} className={clsx(style.header_icon)}><SyncOutlined /></div>
                                 </Badge>
-                                <Badge style={{ backgroundColor: '#daa174' }} count="0">
+                                <Badge className={clsx('d-sm-flex', 'd-none')} style={{ backgroundColor: '#daa174' }} count="0">
                                     <div className={clsx(style.header_icon)}><UserOutlined /></div>
                                 </Badge>
 
@@ -185,7 +191,7 @@ function Header() {
             <Drawer
                 // title="Drawer with extra actions"
                 placement={"left"}
-                width={530}
+                width={window.innerWidth > 530 ? 530 : '100%'}
                 onClose={onCloseNav}
                 closable={false}
                 open={openNav}
@@ -216,39 +222,50 @@ function Header() {
                             </div>
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <div className={clsx(style.item_icon)}><ShoppingCartOutlined /></div>
+                                    <div onClick={() => setTab_left('cart')} className={clsx(style.item_icon)} style={tab_left === 'cart' ? { backgroundColor: "#fff" } : {}}><ShoppingCartOutlined /></div>
                                 </Badge>
                             </div>
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div className={clsx(style.item_icon)}><HeartOutlined /></div>
+                                    <div onClick={() => setTab_left('wish')} className={clsx(style.item_icon)} style={tab_left === 'wish' ? { backgroundColor: "#fff" } : {}}><HeartOutlined /></div>
                                 </Badge>
                             </div>
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div className={clsx(style.item_icon)}><SyncOutlined /></div>
+                                    <div onClick={() => setTab_left('compare')} className={clsx(style.item_icon)} style={tab_left === 'compare' ? { backgroundColor: "#fff" } : {}}><SyncOutlined /></div>
                                 </Badge>
                             </div>
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div className={clsx(style.item_icon)}><UserOutlined /></div>
+                                    <div onClick={() => setTab_left('user')} className={clsx(style.item_icon)} style={tab_left === 'user' ? { backgroundColor: "#fff" } : {}}><UserOutlined /></div>
                                 </Badge>
                             </div>
                         </div>
                     </Col>
-                    <Col flex="auto">
+                    <Col flex="auto" className={clsx(style.right_nav)}>
+                        {/* <div style={{ overflow: 'auto' }}> */}
+                        <div className={clsx(style.content_item, style.left_a, tab_left === 'cart' && style.show)}>
+                            <CartDrawer />
+                        </div>
+                        <div className={clsx(style.content_item, style.left_a, tab_left === 'wish' && style.show)}>
+                            <Wishlish_drawer />
+                        </div>
+                        <div className={clsx(style.content_item, style.left_a, tab_left === 'compare' && style.show)}>
+                            <Compare_drawer />
+                        </div>
+                        {/* </div> */}
                     </Col>
                 </Row>
 
             </Drawer>
             <Drawer
-
                 placement={"right"}
                 width={window.innerWidth > 460 ? 460 : '100%'}
                 closable={false}
                 onClose={onCloseCart}
                 open={openCart}
                 maskStyle={{ backgroundColor: "#d5d5d573" }}
+                bodyStyle={{ overflowX: "hidden", overflowY: 'auto' }}
             >
                 <div className={clsx(style.drawer_right)}>
                     <div className={clsx(style.drawer_rt)}>
@@ -260,19 +277,27 @@ function Header() {
                         </div>
                         <div className={clsx(style.icon_drawer_group)}>
                             <Badge offset={[-12, 4]} style={{ backgroundColor: '#daa174' }} count="2">
-                                <div onClick={showDrawerCart} className={clsx(style.icon_drawer)}><ShoppingCartOutlined /></div>
+                                <div onClick={() => setTab_right('cart')} style={tab_right === 'cart' ? { backgroundColor: "#e9ecee" } : {}} className={clsx(style.icon_drawer)}><ShoppingCartOutlined /></div>
+                            </Badge>
+                            <Badge offset={[-12, 4]} style={{ backgroundColor: '#daa174' }} count="2">
+                                <div onClick={() => setTab_right('wish')} style={tab_right === 'wish' ? { backgroundColor: "#e9ecee" } : {}} className={clsx(style.icon_drawer)}><HeartOutlined /></div>
                             </Badge>
                             <Badge offset={[-12, 4]} style={{ backgroundColor: '#daa174' }} count="0">
-                                <div className={clsx(style.icon_drawer)}><HeartOutlined /></div>
-                            </Badge>
-                            <Badge offset={[-12, 4]} style={{ backgroundColor: '#daa174' }} count="0">
-                                <div className={clsx(style.icon_drawer)}><SyncOutlined /></div>
+                                <div onClick={() => setTab_right('compare')} style={tab_right === 'compare' ? { backgroundColor: "#e9ecee" } : {}} className={clsx(style.icon_drawer)}><SyncOutlined /></div>
                             </Badge>
 
                         </div>
 
                     </div>
-                    <CartDrawer />
+                    <div className={clsx(style.content_item, style.right_a, tab_right === 'cart' && style.show)}>
+                        <CartDrawer />
+                    </div>
+                    <div className={clsx(style.content_item, style.right_a, tab_right === 'wish' && style.show)}>
+                        <Wishlish_drawer />
+                    </div>
+                    <div className={clsx(style.content_item, style.right_a, tab_right === 'compare' && style.show)}>
+                        <Compare_drawer />
+                    </div>
                 </div>
 
             </Drawer>

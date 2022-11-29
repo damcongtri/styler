@@ -2,17 +2,16 @@ import { DeleteOutlined, LineOutlined } from '@ant-design/icons';
 import { Col, Divider, Row, Typography } from 'antd';
 // import Text from 'antd/es/input/Text';
 import clsx from 'clsx';
-import style from "./compare.module.scss"
+import style from "./wishlist.module.scss"
 
-function Compare_drawer() {
+function Wishlish_drawer() {
     const { Text, Link } = Typography;
 
     return (
         <>
             <div className={clsx(style.ani)}>
-
                 <div className={clsx(style.cart_drawer)}>
-                    <Divider orientation="left">Your Compare</Divider>
+                    <Divider orientation="left">Your Wishlist</Divider>
                     <div className={clsx(style.item)}>
                         <Row>
                             <Col flex="80px">
@@ -75,9 +74,8 @@ function Compare_drawer() {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
 
-export default Compare_drawer;
+export default Wishlish_drawer;

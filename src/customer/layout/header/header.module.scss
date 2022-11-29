@@ -1,4 +1,5 @@
-// Khai báo kích thước tương ứng với màn hình thiết bị $XS: 480px;
+// Khai báo kích thước tương ứng với màn hình thiết bị
+$XS: 575px;
 $SM: 768px;
 $MD: 1024px;
 $XL: 1170px;
@@ -218,7 +219,18 @@ $XL: 1170px;
 
 .left_nav {
     background-color: #f5f4ee;
-    height: 100%;
+    height: auto;
+    // display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 24px;
+
+    @include Responsive(XS) {
+        height: 100%;
+        justify-content: unset;
+        // flex: 0 0 80px
+        padding-right: 0;
+    }
 
     .btn_x {
         width: 80px;
@@ -243,12 +255,18 @@ $XL: 1170px;
     }
 
     .icon_group {
+        justify-content: space-between;
         text-align: center;
 
         .nav_icon {
             width: 100%;
             display: block;
-            padding-bottom: 20px;
+            // padding-bottom: 0;
+            padding: 0 6px;
+
+            @include Responsive(XS) {
+                padding-bottom: 20px;
+            }
 
             .item_icon {
                 font-size: 22px;
@@ -258,7 +276,6 @@ $XL: 1170px;
 
                 span {
                     padding: 10px;
-
                 }
             }
 
@@ -276,9 +293,14 @@ $XL: 1170px;
     .right_nav {
         // width: calc(100% - 80px);
         height: 100%;
-        padding: 16px 32px;
+        padding: 16px;
         overflow-y: auto;
         overflow-x: hidden;
+
+        @include Responsive(XS) {
+            padding: 16px 32px;
+
+        }
 
         .content_item {
             height: 0;

@@ -208,18 +208,14 @@ function Header() {
             >
 
                 <Row className={clsx(style.nav)}>
-                    <Col flex="80px" className={clsx(style.left_nav, "col-xs-12")} >
+                    <Col flex={window.innerWidth >= 576 ? "80px" : "100%"} className={clsx(style.left_nav, 'd-sm-block', 'd-flex')} >
                         <div className={style.btn_x}>
                             <p onClick={onCloseNav} >
                                 <Btn_x></Btn_x>
                             </p>
                         </div>
-                        <div className={clsx(style.icon_group)}>
-                            <div className={clsx(style.nav_icon)}>
-                                <Badge style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div className={clsx(style.item_icon)}><SearchOutlined /></div>
-                                </Badge>
-                            </div>
+                        <div className={clsx(style.icon_group, 'd-sm-block', 'd-flex')}>
+
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="2">
                                     <div onClick={() => setTab_left('cart')} className={clsx(style.item_icon)} style={tab_left === 'cart' ? { backgroundColor: "#fff" } : {}}><ShoppingCartOutlined /></div>
@@ -265,7 +261,7 @@ function Header() {
                 onClose={onCloseCart}
                 open={openCart}
                 maskStyle={{ backgroundColor: "#d5d5d573" }}
-                bodyStyle={{ overflowX: "hidden", overflowY: 'auto' }}
+                bodyStyle={{ overflowX: "hidden", overflowY: 'auto', padding: `${window.innerWidth > 460 ? '24px' : '16px'}` }}
             >
                 <div className={clsx(style.drawer_right)}>
                     <div className={clsx(style.drawer_rt)}>

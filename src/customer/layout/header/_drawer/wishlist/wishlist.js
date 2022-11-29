@@ -29,7 +29,8 @@ function Wishlish_drawer() {
                                     <div className={clsx(style.add)}>Add to cart</div>
                                 </div>
                             </Col>
-                            <Col flex="22px"><DeleteOutlined style={{ fontSize: "16px", cursor: 'pointer' }} /></Col>
+                            <Col flex="22px" style={{ textAlign: 'center' }}><DeleteOutlined style={{ fontSize: "16px", cursor: 'pointer' }} /></Col>
+
                         </Row>
                     </div>
                     <div className={clsx(style.item)}>
@@ -49,7 +50,8 @@ function Wishlish_drawer() {
                                     <div className={clsx(style.add)}>Add to cart</div>
                                 </div>
                             </Col>
-                            <Col flex="22px"><DeleteOutlined style={{ fontSize: "16px", cursor: 'pointer' }} /></Col>
+                            <Col flex="22px" style={{ textAlign: 'center' }}><DeleteOutlined style={{ fontSize: "16px", cursor: 'pointer' }} /></Col>
+
                         </Row>
                     </div>
                     <div className={clsx(style.item)}>
@@ -69,7 +71,8 @@ function Wishlish_drawer() {
                                     <div className={clsx(style.add)}>Add to cart</div>
                                 </div>
                             </Col>
-                            <Col flex="22px"><DeleteOutlined style={{ fontSize: "16px", cursor: 'pointer' }} /></Col>
+                            <Col flex="22px" style={{ textAlign: 'center' }}><DeleteOutlined style={{ fontSize: "16px", cursor: 'pointer' }} /></Col>
+
                         </Row>
                     </div>
                 </div>

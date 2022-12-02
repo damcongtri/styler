@@ -291,7 +291,7 @@ $XL: 1170px;
     // overflow: hidden;
 
     .right_nav {
-        // width: calc(100% - 80px);
+        max-width: calc(530px - 80px);
         height: 100%;
         padding: 16px;
         overflow-y: auto;

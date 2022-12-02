@@ -1,4 +1,4 @@
-import { DownOutlined, HeartOutlined, MenuUnfoldOutlined, SearchOutlined, ShoppingCartOutlined, SyncOutlined, UserOutlined } from "@ant-design/icons";
+import { DownOutlined, FileSearchOutlined, HeartOutlined, MenuUnfoldOutlined, SearchOutlined, ShoppingCartOutlined, SyncOutlined, UserOutlined } from "@ant-design/icons";
 import { Badge, Button, Card, Col, Drawer, Row, Space } from "antd";
 import clsx from "clsx";
 import { useState } from "react";
@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import Btn_x from "../../../component/btn/btn_x";
 import style from "./header.module.scss";
 import CartDrawer from "./_drawer/cart/cart";
+import CategoryDrawer from "./_drawer/category/category";
 import Compare_drawer from "./_drawer/compare/compare";
+import NavDrawer from "./_drawer/nav/nav";
 import Wishlish_drawer from "./_drawer/wishlist/wishlist";
 
 
@@ -214,26 +216,31 @@ function Header() {
                                 <Btn_x></Btn_x>
                             </p>
                         </div>
-                        <div className={clsx(style.icon_group, 'd-sm-block', 'd-flex')}>
+                        <div className={clsx(style.icon_group, 'd-sm-block', 'd-flex', 'pt-sm-3', 'p-0')}>
 
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <div onClick={() => setTab_left('cart')} className={clsx(style.item_icon)} style={tab_left === 'cart' ? { backgroundColor: "#fff" } : {}}><ShoppingCartOutlined /></div>
+                                    <div onClick={() => setTab_left((t) => t !== 'cart' ? 'cart' : false)} className={clsx(style.item_icon)} style={tab_left === 'cart' ? { backgroundColor: "#fff" } : {}}><ShoppingCartOutlined /></div>
                                 </Badge>
                             </div>
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div onClick={() => setTab_left('wish')} className={clsx(style.item_icon)} style={tab_left === 'wish' ? { backgroundColor: "#fff" } : {}}><HeartOutlined /></div>
+                                    <div onClick={() => setTab_left((t) => t !== 'wish' ? 'wish' : false)} className={clsx(style.item_icon)} style={tab_left === 'wish' ? { backgroundColor: "#fff" } : {}}><HeartOutlined /></div>
                                 </Badge>
                             </div>
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div onClick={() => setTab_left('compare')} className={clsx(style.item_icon)} style={tab_left === 'compare' ? { backgroundColor: "#fff" } : {}}><SyncOutlined /></div>
+                                    <div onClick={() => setTab_left((t) => t !== 'compare' ? 'compare' : false)} className={clsx(style.item_icon)} style={tab_left === 'compare' ? { backgroundColor: "#fff" } : {}}><SyncOutlined /></div>
                                 </Badge>
                             </div>
                             <div className={clsx(style.nav_icon)}>
                                 <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
-                                    <div onClick={() => setTab_left('user')} className={clsx(style.item_icon)} style={tab_left === 'user' ? { backgroundColor: "#fff" } : {}}><UserOutlined /></div>
+                                    <div onClick={() => setTab_left((t) => t !== 'category' ? 'category' : false)} className={clsx(style.item_icon)} style={tab_left === 'category' ? { backgroundColor: "#fff" } : {}}><FileSearchOutlined /></div>
+                                </Badge>
+                            </div>
+                            <div className={clsx(style.nav_icon)}>
+                                <Badge offset={[0, 10]} style={{ backgroundColor: '#daa174' }} count="0">
+                                    <div onClick={() => setTab_left((t) => t !== 'user' ? 'user' : false)} className={clsx(style.item_icon)} style={tab_left === 'user' ? { backgroundColor: "#fff" } : {}}><UserOutlined /></div>
                                 </Badge>
                             </div>
                         </div>
@@ -249,6 +256,13 @@ function Header() {
                         <div className={clsx(style.content_item, style.left_a, tab_left === 'compare' && style.show)}>
                             <Compare_drawer />
                         </div>
+                        <div className={clsx(style.content_item, style.left_a, tab_left === 'category' && style.show)}>
+                            <CategoryDrawer />
+                        </div>
+                        <div className={clsx(style.content_item, style.left_a, tab_left === false && style.show)}>
+                            <NavDrawer />
+                        </div>
+
                         {/* </div> */}
                     </Col>
                 </Row>

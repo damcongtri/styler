@@ -10,171 +10,183 @@ function CategoryDrawer() {
                 <Divider style={{ height: "1px", backgroundColor: "#e2e2e2" }}></Divider>
 
                 <Row gutter={[20, 20]}>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
 
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>
                     </Col>
-                    <Col span={8} >
+                    <Col sm={8} xs={12} >
                         <div className={clsx(style.item)}>
-                            <div className={clsx(style.image,)}>
+                            <div className={clsx(style.image)}>
+                                <Badge offset={[-20, 15]} style={{ backgroundColor: '#daa174' }} count="2">
 
-                                <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                    <img className="card-img" src="https://f8g8b9p5.rocketcdn.me/themes/styler/fashion/wp-content/uploads/2021/12/product-name-110-80x80.jpeg"></img>
+                                </Badge>
+
                             </div>
                             <div style={{ textAlign: "center" }}>
-                                <Badge offset={[-66, -97]} style={{ backgroundColor: '#daa174' }} count="2">
-                                    <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
-                                </Badge>
+                                <p className='text-center' style={{ width: "100%" }}>Swimwear</p>
                             </div>
 
                         </div>

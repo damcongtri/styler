@@ -9,6 +9,7 @@ import CartDrawer from "./_drawer/cart/cart";
 import CategoryDrawer from "./_drawer/category/category";
 import Compare_drawer from "./_drawer/compare/compare";
 import NavDrawer from "./_drawer/nav/nav";
+import UserDrawer from "./_drawer/user/user";
 import Wishlish_drawer from "./_drawer/wishlist/wishlist";
 
 
@@ -258,6 +259,9 @@ function Header() {
                         </div>
                         <div className={clsx(style.content_item, style.left_a, tab_left === 'category' && style.show)}>
                             <CategoryDrawer />
+                        </div>
+                        <div className={clsx(style.content_item, style.left_a, tab_left === 'user' && style.show)}>
+                            <UserDrawer />
                         </div>
                         <div className={clsx(style.content_item, style.left_a, tab_left === false && style.show)}>
                             <NavDrawer />

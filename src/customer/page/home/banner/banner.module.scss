@@ -1,10 +1,11 @@
 .banner {
 
+    // width: 100%;
 
     .item {
         width: 100%;
         height: 100vh;
-        background-image: url('https://ninetheme.com/themes/styler/fashion/wp-content/uploads/2021/12/product-name-2.jpeg');
+        // background-image: url('https://ninetheme.com/themes/styler/fashion/wp-content/uploads/2021/12/product-name-2.jpeg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -24,12 +25,17 @@
                 background-color: #daa174;
                 display: inline-block;
                 text-transform: uppercase;
+                animation-name: banner;
+                animation-duration: 0.5s;
+                animation-delay: 0.5s;
             }
 
             .name {
                 margin-top: 16px;
                 margin-bottom: 32px;
-
+                animation-name: banner;
+                animation-duration: 0.5s;
+                animation-delay: 0.7s;
             }
 
             .btn_shop {
@@ -40,6 +46,9 @@
                 background-color: #252525;
                 display: block;
                 overflow: hidden;
+                animation-name: banner;
+                animation-duration: 0.5s;
+                animation-delay: 1s;
 
                 span {
                     position: absolute;
@@ -94,5 +103,19 @@
             left: 15%;
         }
 
+    }
+}
+
+@keyframes banner {
+    from {
+        display: inline-block;
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    to {
+        display: inline-block;
+        transform: translateY(0);
+        opacity: 1;
     }
 }

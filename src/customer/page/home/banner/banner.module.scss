@@ -25,17 +25,20 @@
                 background-color: #daa174;
                 display: inline-block;
                 text-transform: uppercase;
-                animation-name: banner;
-                animation-duration: 0.5s;
-                animation-delay: 0.5s;
+                transform: translateY(200px);
+                opacity: 0;
+                transition: 0.5s;
+                transition-delay: 0.3s;
+                // transition-delay: 2s;
             }
 
             .name {
                 margin-top: 16px;
                 margin-bottom: 32px;
-                animation-name: banner;
-                animation-duration: 0.5s;
-                animation-delay: 0.7s;
+                transform: translateY(200px);
+                opacity: 0;
+                transition: 0.5s;
+                transition-delay: 0.6s;
             }
 
             .btn_shop {
@@ -46,9 +49,10 @@
                 background-color: #252525;
                 display: block;
                 overflow: hidden;
-                animation-name: banner;
-                animation-duration: 0.5s;
-                animation-delay: 1s;
+                transform: translateY(200px);
+                opacity: 0;
+                transition: 0.5s;
+                transition-delay: 1s;
 
                 span {
                     position: absolute;
@@ -106,16 +110,7 @@
     }
 }
 
-@keyframes banner {
-    from {
-        display: inline-block;
-        transform: translateY(300px);
-        opacity: 0;
-    }
-
-    to {
-        display: inline-block;
-        transform: translateY(0);
-        opacity: 1;
-    }
+.ani {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
 }

@@ -224,6 +224,8 @@ $XL: 1170px;
     align-items: center;
     justify-content: space-between;
     padding-right: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     @include Responsive(XS) {
         height: 100%;
@@ -269,6 +271,7 @@ $XL: 1170px;
             }
 
             .item_icon {
+                width: 100%;
                 font-size: 22px;
                 cursor: pointer;
                 // background-color: #fff;
@@ -287,8 +290,8 @@ $XL: 1170px;
 
 .nav {
     height: 100%;
-    // width: 100%;
-    // overflow: hidden;
+    max-height: 100vh;
+
 
     .right_nav {
         max-width: calc(530px - 80px);
@@ -333,7 +336,7 @@ $XL: 1170px;
 .show {
     // transition-delay: 1s;
     opacity: 1 !important;
-    height: auto !important;
+    height: auto;
     visibility: inherit !important;
     transform: translateX(0) !important;
 }

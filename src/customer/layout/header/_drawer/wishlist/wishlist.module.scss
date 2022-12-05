@@ -40,11 +40,11 @@ $XL: 1170px;
     width: 100%;
 
     .cart_drawer {
-        width: 100%;
-
         // @include Responsive(XS) {
         //     max-width: 100%;
         // }
+
+        width: 100%;
 
         .item {
             margin-top: 20px;

@@ -291,11 +291,11 @@ $XL: 1170px;
 .nav {
     height: 100vh;
     max-height: 100vh;
-    // overflow: hidden;
+    overflow: hidden;
 
     .right_nav {
         max-width: calc(530px - 80px);
-        height: 100vh;
+        height: calc(100vh - 64px);
         max-height: 105vh;
         padding: 16px;
         overflow-y: auto;

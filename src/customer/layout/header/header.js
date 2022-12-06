@@ -311,7 +311,7 @@ function Header() {
                 onClose={onCloseCart}
                 open={openCart}
                 maskStyle={{ backgroundColor: "#d5d5d573" }}
-                bodyStyle={{ overflowX: "hidden", overflowY: 'auto', padding: `${window.innerWidth > 460 ? '24px' : '16px'}` }}
+                bodyStyle={{ overflowX: "hidden", overflowY: 'scroll', padding: `${window.innerWidth > 460 ? '24px' : '16px'}` }}
             >
                 <div className={clsx(style.drawer_right)}>
                     <div className={clsx(style.drawer_rt)}>

@@ -291,7 +291,7 @@ $XL: 1170px;
 .nav {
     height: 100vh;
     max-height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
 
     .right_nav {
         max-width: calc(530px - 80px);
@@ -302,7 +302,7 @@ $XL: 1170px;
         overflow-x: hidden;
 
         @include Responsive(XS) {
-            padding: 16px 32px;
+            padding: 0 32px;
 
         }
 

@@ -1,1 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap');
+
+.ant-tabs-ink-bar {
+    position: absolute;
+    background: #000000 !important;
+    pointer-events: none;
+}
+
+.ant-tabs-tab:hover {
+    opacity: 0.9;
+    color: #daa174 !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #363636ad !important;
+    font-weight: 500;
+}

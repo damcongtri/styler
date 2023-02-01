@@ -42,6 +42,8 @@ $XL: 1170px;
 
     .container_styler {
         max-width: 1580px;
+        // margin: 0 auto;
+        padding: 0;
     }
 
     .logo {
@@ -109,12 +111,12 @@ $XL: 1170px;
 
                 p {
                     opacity: 0.8;
-                    font-size: 12px;
+                    font-size: 13px !important;
                     line-height: 1;
                     font-family: 'Jost', sans-serif;
                     font-size: 13px;
                     text-transform: capitalize;
-                    padding: 2px 0;
+                    padding: 6px 0 !important;
 
                     &:hover {
                         opacity: 0.6;
@@ -410,7 +412,7 @@ $XL: 1170px;
     background-color: #fff;
     position: fixed;
     bottom: 0;
-    z-index: 2;
+    z-index: 200000;
     align-items: center;
     justify-content: space-around;
 

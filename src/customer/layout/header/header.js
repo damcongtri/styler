@@ -40,7 +40,7 @@ function Header() {
             <div className={clsx(style.header)}>
                 <div className={clsx("container-xxl", style.container_styler)}>
                     <Row justify="space-between" align='middle'>
-                        <Row align={"middle"}>
+                        <Row align={"middle"} style={{ padding: '0 1rem' }}>
                             <MenuUnfoldOutlined onClick={showDrawerNav} style={{ fontSize: "22px", cursor: "pointer" }} />
                             <Link to={"/"} className={clsx(style.logo)}>
                                 styler
@@ -54,7 +54,7 @@ function Header() {
                             <div className={clsx(style.item)}>
                                 <Link to="/shop" >Category <i className="fa-solid fa-angle-down"></i></Link>
                                 <div className={clsx(style.drop_menu)}>
-                                    <Row>
+                                    <Row style={{ maxWidth: '1440px', margin: "0 auto" }}>
                                         <Col span={7}>
                                             <div className={clsx(style.left)}>
                                                 <h5 className={clsx(style.title)}>All Categories</h5>
